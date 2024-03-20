@@ -426,7 +426,10 @@ class ChipsInputState<T> extends State<ChipsInput<T>> with TextInputClient {
         final renderBox = context.findRenderObject() as RenderBox;
         await Scrollable.of(context)
             .position
-            .ensureVisible(renderBox)
+            .ensureVisible(
+              renderBox,
+              alignmentPolicy: widget.scrollPositionAlignmentPolicy,
+            )
             .then((_) async {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             _suggestionsBoxController.overlayEntry?.markNeedsBuild();
