@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class TextCursor extends StatefulWidget {
   const TextCursor({
-    Key? key,
+    super.key,
     this.duration = const Duration(milliseconds: 500),
     this.resumed = false,
-  }) : super(key: key);
+  });
 
   final Duration duration;
   final bool resumed;

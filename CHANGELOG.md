@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file follows the convention described at
 [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [1.1.4] - 2024-03-20
+### Fixed
+- amorenew: Added `scrollPositionAlignmentPolicy` parameter so I can ensure visible alignment to top or bottom.
+- amorenew: Upgrade to Flutter SDK >=3.0.0 and Dart SDK >=3.0.0
+
 ## [1.1.3] - 2023-09-22
 ### Fixed
 - Removed redundant call to `onChanged()` from `selectSuggestion()`.

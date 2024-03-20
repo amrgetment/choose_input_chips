@@ -43,7 +43,7 @@ extension on TextEditingValue {
 /// the widget in a programmatic fashion.
 class ChipsInput<T> extends StatefulWidget {
   const ChipsInput({
-    Key? key,
+    super.key,
     this.initialValue = const [],
     this.decoration = const InputDecoration(),
     this.enabled = true,
@@ -78,8 +78,7 @@ class ChipsInput<T> extends StatefulWidget {
     this.suggestionsBoxBorderRadius = 0.0,
     this.suggestionsBoxBorder = const Border(),
     this.showKeyboard = true,
-  })  : assert(maxChips == null || initialValue.length <= maxChips),
-        super(key: key);
+  }) : assert(maxChips == null || initialValue.length <= maxChips);
 
   final InputDecoration decoration;
 
@@ -598,9 +597,9 @@ class ChipsInputState<T> extends State<ChipsInput<T>> with TextInputClient {
       ),
     );
 
-    return RawKeyboardListener(
+    return KeyboardListener(
       focusNode: _effectiveFocusNode,
-      onKey: (event) {
+      onKeyEvent: (event) {
         final str = currentTextEditingValue.text;
         // seems like the browser handles backspace already, so doing the same
         // here results in deleting two chips at once
